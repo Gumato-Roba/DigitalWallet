@@ -1,9 +1,4 @@
 from datetime import datetime
-from distutils.command.upload import upload
-from email import message
-from locale import currency
-import profile
-from time import timezone
 from django.db import models
 
 # Create your models here.
@@ -14,10 +9,7 @@ class Customer(models.Model):
     email = models.EmailField()
     phonenumber = models.CharField(max_length=10)
     age = models.IntegerField()
-    # nationality = models.CharField(max_length=100)
-    # occupation = models.CharField(max_length=30)
-    # date_created = models.DateTimeField(default=datetime.now)
-    # dateOfBirth = models.DateField()
+    
 
 class Wallet(models.Model):
     customer = models.ForeignKey(default=1,on_delete=models.CASCADE, to = Customer)
@@ -58,8 +50,11 @@ class ThirdParty(models.Model):
     account = models.ForeignKey(default=1,on_delete=models.CASCADE, to=Account)
 
 class Notification(models.Model):
-    message = models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
+    name=models.CharField(max_length=10)
+    message= models.TextField()
+    dateandTime= models.DateTimeField()
+    date_sent= models.DateField()
+    status= models.BooleanField()
     
 
 class Receipt(models.Model):
