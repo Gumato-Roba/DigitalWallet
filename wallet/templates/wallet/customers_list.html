@@ -1,0 +1,21 @@
+<table>
+    <th>
+    <td>First Name </td>
+    <td>Last Name </td>
+    <td> Age </td>
+    <td> Email </td>
+    <td> Address</td>
+    <td> Phone Number </td>
+
+    </th>
+    {%for Customer in customers%}
+     <tr>
+        <td>{{ Customer.first_name}}</td>
+        <td>{{Customer.last_name}}</td>
+        <td>{{Customer.age}}</td>
+        <td>{{Customer.email}}</td>
+        <td>{{Customer.address}}</td>
+        <td>{{Customer.phone_number}}</td>
+     </tr>
+     {% endfor %}
+    </table>

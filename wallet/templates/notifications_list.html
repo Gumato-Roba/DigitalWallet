@@ -1,0 +1,18 @@
+<table>
+    <th>
+    <td> Name</td>
+    <td> Message</td>
+    <td> Date and Time</td>
+    <td> Date Sent </td>
+    <td> Status </td>
+    </th>
+    {%for Notification in notifications%}
+     <tr>
+        <td>{{ Notification.name}}</td>
+        <td>{{ Notification.message}}</td>
+        <td>{{ Notification.date_sent}}</td>
+        <td>{{ Notification.status}}</td>
+    
+     </tr>
+     {% endfor %}
+    </table>
