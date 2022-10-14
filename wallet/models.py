@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.db import models
 
+
 # Create your models here.
 class Customer(models.Model):
     first_name = models.CharField(max_length=15)
@@ -9,7 +10,9 @@ class Customer(models.Model):
     email = models.EmailField()
     phonenumber = models.CharField(max_length=10)
     age = models.IntegerField()
-    
+    profile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
+
+
 
 class Wallet(models.Model):
     customer = models.ForeignKey(default=1,on_delete=models.CASCADE, to = Customer)

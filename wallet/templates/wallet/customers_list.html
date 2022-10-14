@@ -1,13 +1,29 @@
+   <style>
+   table th, td {
+     border: 1px solid;
+     padding: 10px;
+   }
+   th{
+     color: white;
+     background-color: rgb(18, 21, 216);
+   }
+   table {
+     width: 80%;
+     border-collapse: collapse;
+     margin-left: 10%;
+   }
+   </style>
 <table>
-    <th>
-    <td>First Name </td>
-    <td>Last Name </td>
-    <td> Age </td>
-    <td> Email </td>
-    <td> Address</td>
-    <td> Phone Number </td>
+    <tr>
+    <th>First Name </th>
+    <th>Last Name </th>
+    <th> Age </th>
+    <th> Email </th>
+    <th> Address</th>
+    <th> Phone Number </th>
+    <th> Profile</th>
 
-    </th>
+    </tr>
     {%for Customer in customers%}
      <tr>
         <td>{{ Customer.first_name}}</td>
@@ -16,6 +32,7 @@
         <td>{{Customer.email}}</td>
         <td>{{Customer.address}}</td>
         <td>{{Customer.phone_number}}</td>
-     </tr>
+        <td><a href="{% url 'customer_profile' id=Customer.id%}"> view Profile </a>
+        </tr>
      {% endfor %}
     </table>
